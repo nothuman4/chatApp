@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Chat App</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h2>💬 Real-Time Chat App</h2>
+        <button id="logout-button" class="hidden">Logout</button>
+    </header>
+
+    
+    <section id="auth-form" class="center-card">
+        <div class="toggle-buttons">
+            <button id="login-toggle" class="active">Login</button>
+            <button id="register-toggle">Register</button>
+        </div>
+
+        <form id="auth-form-data">
+            <h3>Login to Chat</h3>
+
+            <input id="username-auth-input" type="text" placeholder="Username" style="display: none;">
+            <input id="email-auth-input" type="email" placeholder="Email" required>
+            <input id="password-auth-input" type="password" placeholder="Password" required>
+
+            <button type="submit">Login</button>
+        </form>
+    </section>
+
+    
+    <section id="room-form" class="center-card hidden">
+        <h3>Join a Room</h3>
+        <form>
+            <input id="room-input" type="text" placeholder="Enter room name..." required>
+            <button type="submit">Join</button>
+        </form>
+    </section>
+
+    
+    <section id="chat-section" class="hidden">
+        <div id="room-display" class="room-display"></div>
+
+        <ul id="messages"></ul>
+
+        <form id="form" class="message-form">
+            <input id="input" autocomplete="off" placeholder="Type your message..." />
+            <button>Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Made with Love by AMAN</p>
+    </footer>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
