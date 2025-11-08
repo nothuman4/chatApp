@@ -89,7 +89,7 @@ function startChatSocket(token)
         const roomName = roomInput.value;
         data.forEach(msgObject => {
             const isHistoricalMine = msgObject.userId === currentUserId; 
-            const usernameDisplay = isHistoricalMine ? 'आप' : msgObject.username;
+            const usernameDisplay = isHistoricalMine ? 'You' : msgObject.username;
             const formattedMsg = `<strong>${usernameDisplay}:</strong> ${msgObject.message}`;
             displayMessage(formattedMsg, false, isHistoricalMine); 
         });
@@ -146,7 +146,7 @@ authFormData.addEventListener('submit', async (e) => {
             switchToRoomSelection(currentUsername); 
             startChatSocket(authToken); 
         } else {
-            displayMessage(`Authentication Error: ${data.message || 'कुछ गलत हुआ'}`, true);
+            displayMessage(`Authentication Error: ${data.message || 'something went wrong'}`, true);
         }
     } catch (err) {
         displayMessage('Network error:cannot reach to server', true);
