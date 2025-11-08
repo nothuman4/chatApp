@@ -89,7 +89,7 @@ function startChatSocket(token)
         const roomName = roomInput.value;
         data.forEach(msgObject => {
             const isHistoricalMine = msgObject.userId === currentUserId; 
-            const usernameDisplay = isHistoricalMine ? 'You' : msgObject.username;
+            const usernameDisplay = isHistoricalMine ? 'you' : msgObject.username;
             const formattedMsg = `<strong>${usernameDisplay}:</strong> ${msgObject.message}`;
             displayMessage(formattedMsg, false, isHistoricalMine); 
         });
